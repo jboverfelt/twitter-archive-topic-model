@@ -1,0 +1,3 @@
+# ignore any csv or generated files
+*.csv
+tweets-text
