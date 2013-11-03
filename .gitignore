@@ -1,3 +1,7 @@
 # ignore any csv or generated files
 *.csv
+*.gz
+*.mallet
 tweets-text
+tweets-keys
+data/

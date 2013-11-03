@@ -4,11 +4,17 @@
 # retrieval applications
 
 require 'csv'
+require 'fileutils'
 
-tweet_text = File.open('tweets-text', 'w')
+if ARGV.length == 1
+  FileUtils.mkdir_p "tweets-data"
+  tweet_text = File.open('tweets-data/tweets-text', 'w')
 
-CSV.foreach('tweets.csv', headers: true) do |tweet|
-  tweet_text.puts tweet['text']
+  CSV.foreach(ARGV[0], headers: true) do |tweet|
+    tweet_text.puts tweet['text']
+  end
+
+  tweet_text.close
+else
+  raise "Usage: ruby tweet_archive_parser [tweets csv file]"
 end
-
-tweet_text.close
