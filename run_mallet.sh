@@ -13,8 +13,8 @@ TWEETS_CSV=$2
 
 ruby tweet_archive_parser.rb $TWEETS_CSV 
 
-$MALLET_EXECUTABLE import-dir --input tweets-data/ --output tweets-sequence.mallet --keep-sequence --remove-stopwords
+$MALLET_EXECUTABLE import-dir --input tweets-data/ --output tweets-sequence.mallet --keep-sequence --remove-stopwords --extra-stopwords more-stopwords 
 
-$MALLET_EXECUTABLE train-topics --input tweets-sequence.mallet --num-topics 25 --output-topic-keys tweets-keys --num-iterations 3000 --num-top-words 15
+$MALLET_EXECUTABLE train-topics --input tweets-sequence.mallet --num-topics 15 --output-topic-keys tweets-keys --num-iterations 5000 --num-top-words 15
 
 cat tweets-keys
