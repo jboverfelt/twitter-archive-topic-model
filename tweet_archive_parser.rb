@@ -16,5 +16,5 @@ if ARGV.length == 1
 
   tweet_text.close
 else
-  raise "Usage: ruby tweet_archive_parser [tweets csv file]"
+  raise "Usage: ruby tweet_archive_parser.rb [tweets csv file]"
 end
